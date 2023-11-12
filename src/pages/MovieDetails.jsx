@@ -28,7 +28,6 @@ const MovieDetails = () => {
   // postId -> '0deqwe';
   // postId -> 'dwa2123dwa241';
   const [movieDetails, setMovieDetails] = useState(null);
-  const [moviePoster, setMoviePoster] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -40,7 +39,6 @@ const MovieDetails = () => {
           `${API_URL}/movie/${movieId}`
         );
         setMovieDetails(data);
-        setMoviePoster(`${API_URL}/movie/${movieId}` + `?api_key=fd6d5c35d1cf4f271430ea570a695e9c` + data.poster_path)
        
       } catch (error) {
         setError(error.message);
@@ -61,7 +59,7 @@ const MovieDetails = () => {
             // <h1>{movieDetails.title}</h1>
             <div className="movieDetails">
                 <div>
-                    <img src={moviePoster} alt={movieDetails.title} className="movie-image" width='300px'/>  
+                    <img src={`${API_URL}/movie/${movieId}` + movieDetails.poster_path} alt={movieDetails.title} className="movie-image" width='300px'/>  
                 </div>
                   
                 <div>
