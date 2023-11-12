@@ -37,3 +37,19 @@ code {
   background-color: black;
   color: #fff;
 }
+
+.add-information-link {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  padding: 10px;
+  margin-right: 25px;
+  display: inline-flex;
+  border: 1px solid rgb(93, 187, 5);
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+.add-information-link.active {
+  background-color: rgb(7, 61, 5);
+  color: #fff;
+}

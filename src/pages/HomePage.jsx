@@ -80,7 +80,7 @@ export class HomePage extends React.Component {
   render() {
     return (
       <StyledMovies>
-        <h1>HTTP-requests</h1>
+        <h1>Trending today:</h1>
 
         {this.state.error !== null && (
           <p className="error-bage">
@@ -96,7 +96,7 @@ export class HomePage extends React.Component {
                   <li
                     key={movie.id}
                     // onClick={() => this.onSelecPostId(post.id)}
-                    className="postListItem"
+                    className="movieListItem"
                   >
                     <Link to={`/movies/${movie.id}`}>
                       <h2 className="itemTitle">{movie.title}</h2>

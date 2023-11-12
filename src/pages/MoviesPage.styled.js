@@ -17,9 +17,9 @@ export const StyledMovies = styled.div`
     padding: 0;
     max-width: 450px;
   }
-  .postListItem {
-    padding: 20px;
-    border: 2px solid black;
+  .movieListItem {
+    padding: 10px;
+    border: 2px dashed black;
     margin-bottom: 25px;
     cursor: pointer;
   }

@@ -75,10 +75,11 @@ const MovieDetails = () => {
             </div>
       )}
       <div>
-            <NavLink className="header-link" to="MovieCast">
+            <h4> Additional information</h4>
+            <NavLink className="add-information-link" to="MovieCast">
                 Cast
             </NavLink>
-            <NavLink className="header-link" to="MovieReviews">
+            <NavLink className="add-information-link" to="MovieReviews">
                 Reviews
              </NavLink>         
       </div>
