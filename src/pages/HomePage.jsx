@@ -23,7 +23,6 @@ export class HomePage extends React.Component {
       this.setState({
         isLoading: true,
       });
-        // console.log(`${API_URL}/trending/all/day?language=en-US&key=${API_KEY}`);
       const { data } = await axios.get(
         `${API_URL}/trending/movie/day?language=en-US`
       );
@@ -40,42 +39,12 @@ export class HomePage extends React.Component {
     }
   };
 
-//   fetchPostComments = async () => {
-//     try {
-//       this.setState({
-//         isLoading: true,
-//       });
-//       const { data } = await axios.get(
-//         `https://jsonplaceholder.typicode.com/comments?postId=${this.state.selectedPostId}`
-//       );
-
-//       this.setState({
-//         comments: data,
-//       });
-//     } catch (error) {
-//       this.setState({ error: error.message });
-//     } finally {
-//       this.setState({
-//         isLoading: false,
-//       });
-//     }
-//   };
-
-//   onSelecPostId = postId => {
-//     this.setState({
-//       selectedPostId: postId,
-//     });
-//   };
 
   componentDidMount() {
     this.fetchMovies();
   }
 
-//   componentDidUpdate(_, prevState) {
-//     if (prevState.selectedPostId !== this.state.selectedPostId) {
-//       this.fetchPostComments();
-//     }
-//   }
+
 
   render() {
     return (

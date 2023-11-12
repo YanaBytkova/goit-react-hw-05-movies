@@ -22,11 +22,17 @@ code {
   box-sizing: border-box;
 }
 
+.header-container {
+  border-bottom: 2px solid rgb(65, 61, 61);
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
 .header-link {
   text-decoration: none;
   color: black;
-  font-size: 20px;
-  padding: 20px;
+  font-size: 28px;
+  padding: 10px;
   margin-right: 25px;
   display: inline-flex;
   border: 1px solid black;
@@ -34,8 +40,8 @@ code {
   transition: all 0.3s;
 }
 .header-link.active {
-  background-color: black;
-  color: #fff;
+  
+  color: #0b5897;
 }
 
 .add-information-link {
@@ -52,4 +58,10 @@ code {
 .add-information-link.active {
   background-color: rgb(7, 61, 5);
   color: #fff;
+}
+
+.add-information {
+  border-top: 1px solid rgb(65, 61, 61);
+  padding: 10px;
+  margin-bottom: 20px;
 }

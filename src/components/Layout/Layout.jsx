@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const Layout = ({ children }) => {
   return (
     <div>
-      <header>
+      <header className="header-container">
         <NavLink className="header-link" to="/">
           Home
         </NavLink>

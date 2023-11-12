@@ -9,7 +9,7 @@ export const StyledMovies = styled.div`
   .loader {
     position: fixed;
     top: 20px;
-    right: 20px;
+    right: 100px;
   }
 
   .postList {
@@ -40,6 +40,7 @@ export const StyledMovies = styled.div`
   }
 
   .movieDetails { 
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
     gap: 20px;
