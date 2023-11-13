@@ -4,13 +4,13 @@ const Loader = () => {
   return (
     <div className="loader">
         <Triangle
-  height="80"
-  width="80"
-  color="#8c8c9c"
-  ariaLabel="triangle-loading"
-  wrapperStyle={{}}
-  wrapperClassName=""
-  visible={true}
+          height="80"
+          width="80"
+          color="#8b8c9c"
+          ariaLabel="triangle-loading"
+          wrapperStyle={{}}
+          wrapperClassName=""
+          visible={true}
         />
     </div>
   );

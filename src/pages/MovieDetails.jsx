@@ -59,7 +59,7 @@ const MovieDetails = () => {
             // <h1>{movieDetails.title}</h1>
             <div className="movieDetails">
                 <div>
-                    <img src={`${API_URL}/movie/${movieId}` + movieDetails.poster_path} alt={movieDetails.title} className="movie-image" width='300px'/>  
+                    <img src={`http://image.tmdb.org/t/p/w500${movieDetails.poster_path}`} alt={movieDetails.title} className="movie-image" width='300px'/>  
                 </div>
                   
                 <div>
@@ -68,7 +68,9 @@ const MovieDetails = () => {
                     <h3> Overview</h3>
                     <p> {movieDetails.overview} </p>
                     <h4> Genres </h4>
-                    <p> {movieDetails.genres[0].name} </p> 
+                    <p className="genres"> {movieDetails.genres.map(genry => {
+                     return ( <span key={genry.id}> {genry.name}</span>)
+                    })} </p> 
 
                 </div>
             

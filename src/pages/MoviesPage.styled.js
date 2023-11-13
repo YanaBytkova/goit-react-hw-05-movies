@@ -46,4 +46,9 @@ export const StyledMovies = styled.div`
     gap: 20px;
   }
  
+ .genres {
+  display: flex;
+    flex-direction: row;
+    gap: 20px;
+ }
 `;

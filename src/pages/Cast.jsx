@@ -43,7 +43,7 @@ const MovieCast = () => {
             {casts.map(cast => {
             return (
                 <li key={cast.id}>
-                    <img src={`${API_URL}/movie/${movieId}/credits` + cast.profile_path} alt={cast.name} className="movie-image"/>
+                    <img src={`http://image.tmdb.org/t/p/w200${cast.profile_path}`} alt={cast.name} className="movie-image"/>
                     <h3 className="itemTitle">{cast.name}</h3>
                     <p> Character: {cast.character}</p>
             

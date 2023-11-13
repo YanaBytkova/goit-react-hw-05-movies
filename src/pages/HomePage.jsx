@@ -74,25 +74,7 @@ export class HomePage extends React.Component {
                 );
               })}
           </ul>
-          {/* <ul className="commentsList">
-            {this.state.selectedPostId !== null && (
-              <li className="commentsListItem">
-                Selected post id: {this.state.selectedPostId}
-              </li>
-            )}
-            {this.state.comments !== null &&
-              this.state.comments.map(comment => {
-                return (
-                  <li key={comment.id} className="commentsListItem">
-                    <h2 className="commentTitle">Name: {comment.name}</h2>
-                    <h3 className="commentEmail">Email: {comment.email}</h3>
-                    <p className="commentBody">
-                      <b>Body:</b> {comment.body}
-                    </p>
-                  </li>
-                );
-              })}
-          </ul> */}
+  
         </div>
       </StyledMovies>
     );
