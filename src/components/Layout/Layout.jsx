@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { NavLink } from 'react-router-dom';
+import Loader from 'components/Loader/Loader';
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <Suspense fallback={<Loader />}>
       <header className="header-container">
         <NavLink className="header-link" to="/">
           Home
@@ -13,7 +14,7 @@ const Layout = ({ children }) => {
         </NavLink>
       </header>
       <main>{children}</main>
-    </div>
+    </Suspense>
   );
 };
 
