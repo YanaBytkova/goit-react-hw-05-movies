@@ -1,0 +1,12 @@
+.movieDetails { 
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+ 
+ .genres {
+  display: flex;
+    flex-direction: row;
+    gap: 20px;
+ }

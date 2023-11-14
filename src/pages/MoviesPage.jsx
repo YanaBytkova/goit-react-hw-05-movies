@@ -1,8 +1,10 @@
 import axios from 'axios';
 import Loader from 'components/Loader/Loader';
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { API_URL } from 'components/config';
+import { MoviesList } from 'components/MoviesList/MoviesList';
+import { SearchForm } from 'components/SearchForm/SearchForm';
 axios.defaults.headers.common["Authorization"] = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmZDZkNWMzNWQxY2Y0ZjI3MTQzMGVhNTcwYTY5NWU5YyIsInN1YiI6IjY1NGY2ZTA5ZDQ2NTM3MDBmZTM1ZGRjNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.psMl8hPRoscle1q5_VKpQUVYxDapYRduGZdJRGatNVg";
 axios.defaults.headers.common["accept"] = "application/json";
 
@@ -15,7 +17,7 @@ const MoviePage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const location = useLocation();
+  // const location = useLocation();
   const queryValue = searchParams.get('query'); 
   // CTRL + SHIFT + L
 
@@ -49,28 +51,17 @@ const MoviePage = () => {
 
   return (
     <div>
-      <form onSubmit={onFormSubmit}>
+      <SearchForm onSubmit={onFormSubmit} />  
+      {/* <form onSubmit={onFormSubmit}>
         <label>
           <input type="text" name="searchKey" required placeholder="Enter movie" />
         </label>
         <button type="submit">Search</button>
-      </form>
+      </form> */}
       {error !== null && <p className="error-bage">{error}</p>}
       {isLoading && <Loader />}
-      {searchedMovies !== null &&
-        searchedMovies.map(movie => {
-          return (
-            <Link
-              state={{ from: location }}
-              key={movie.id}
-              to={`/movies/${movie.id}`}
-            >
-              <div>
-                <h2>{movie.title}</h2>
-              </div>
-            </Link>
-          );
-        })}
+      {searchedMovies !== null && (<MoviesList movies={searchedMovies} />)}
+        
     </div>
   );
 };

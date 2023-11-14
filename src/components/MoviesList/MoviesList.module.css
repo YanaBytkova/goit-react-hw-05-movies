@@ -1,0 +1,11 @@
+.movieListItem {
+    padding: 10px;
+    border: 2px dashed black;
+    margin-bottom: 25px;
+    cursor: pointer;
+  }
+
+  .itemTitle {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }

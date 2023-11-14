@@ -10,6 +10,7 @@ import {
 import axios from 'axios';
 import {API_URL} from 'components/config';
 import Loader from 'components/Loader/Loader';
+import MovieInfo from 'components/MovieInfo/MovieInfo';
 import { StyledMovies } from './MoviesPage.styled';
 axios.defaults.headers.common["Authorization"] = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmZDZkNWMzNWQxY2Y0ZjI3MTQzMGVhNTcwYTY5NWU5YyIsInN1YiI6IjY1NGY2ZTA5ZDQ2NTM3MDBmZTM1ZGRjNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.psMl8hPRoscle1q5_VKpQUVYxDapYRduGZdJRGatNVg";
 axios.defaults.headers.common["accept"] = "application/json";
@@ -55,8 +56,8 @@ const MovieDetails = () => {
       <Link to={backLinkRef.current}>Go back</Link>
       {error !== null && <p className="error-bage">{error}</p>}
       {isLoading && <Loader />}
-      {movieDetails !== null && (
-            // <h1>{movieDetails.title}</h1>
+      {movieDetails !== null && ( <MovieInfo movieDetails={movieDetails} />)}
+            {/* // <h1>{movieDetails.title}</h1>
             <div className="movieDetails">
                 <div>
                     <img src={`http://image.tmdb.org/t/p/w500${movieDetails.poster_path}`} alt={movieDetails.title} className="movie-image" width='300px'/>  
@@ -75,7 +76,7 @@ const MovieDetails = () => {
                 </div>
             
             </div>
-      )}
+      )} */}
       <div className="add-information">
             <h4 > Additional information</h4>
             <NavLink className="add-information-link" to="MovieCast">
