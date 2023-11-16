@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { StyledMovies } from './MoviesPage.styled';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 import Loader from 'components/Loader/Loader';
-import { API_URL } from 'components/config';
+import { HomePageRequest } from 'components/api-services';
 axios.defaults.headers.common["Authorization"] = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmZDZkNWMzNWQxY2Y0ZjI3MTQzMGVhNTcwYTY5NWU5YyIsInN1YiI6IjY1NGY2ZTA5ZDQ2NTM3MDBmZTM1ZGRjNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.psMl8hPRoscle1q5_VKpQUVYxDapYRduGZdJRGatNVg";
 axios.defaults.headers.common["accept"] = "application/json";
 
@@ -18,9 +18,7 @@ const HomePage = () => {
     const fetchMovies = async () => {
       try {
         setIsLoading(true);
-        const { data } = await axios.get(
-          `${API_URL}/trending/movie/day?language=en-US`
-        );
+        const { data } = await HomePageRequest();
         setMovies(data.results);
        
       } catch (error) {

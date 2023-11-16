@@ -5,8 +5,9 @@ import { useSearchParams } from 'react-router-dom';
 import { API_URL } from 'components/config';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 import { SearchForm } from 'components/SearchForm/SearchForm';
-axios.defaults.headers.common["Authorization"] = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmZDZkNWMzNWQxY2Y0ZjI3MTQzMGVhNTcwYTY5NWU5YyIsInN1YiI6IjY1NGY2ZTA5ZDQ2NTM3MDBmZTM1ZGRjNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.psMl8hPRoscle1q5_VKpQUVYxDapYRduGZdJRGatNVg";
-axios.defaults.headers.common["accept"] = "application/json";
+import { FindMovieRequest } from 'components/api-services';
+// axios.defaults.headers.common["Authorization"] = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmZDZkNWMzNWQxY2Y0ZjI3MTQzMGVhNTcwYTY5NWU5YyIsInN1YiI6IjY1NGY2ZTA5ZDQ2NTM3MDBmZTM1ZGRjNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.psMl8hPRoscle1q5_VKpQUVYxDapYRduGZdJRGatNVg";
+// axios.defaults.headers.common["accept"] = "application/json";
 
 // rcc - react class component
 // rafce - react arrow function expression component export default
@@ -35,9 +36,7 @@ const MoviePage = () => {
       try {
         setIsLoading(true);
         setError(null);
-        const { data } = await axios.get(
-            `${API_URL}/search/movie?query=${queryValue}&language=en-US&page=1`
-        );
+        const { data } = await FindMovieRequest(queryValue);
         setSearchedMovies(data.results);
       } catch (error) {
         setError(error.message);
@@ -52,12 +51,6 @@ const MoviePage = () => {
   return (
     <div>
       <SearchForm onSubmit={onFormSubmit} />  
-      {/* <form onSubmit={onFormSubmit}>
-        <label>
-          <input type="text" name="searchKey" required placeholder="Enter movie" />
-        </label>
-        <button type="submit">Search</button>
-      </form> */}
       {error !== null && <p className="error-bage">{error}</p>}
       {isLoading && <Loader />}
       {searchedMovies !== null && (<MoviesList movies={searchedMovies} />)}

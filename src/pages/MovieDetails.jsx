@@ -18,16 +18,13 @@ axios.defaults.headers.common["accept"] = "application/json";
 const MovieCast = lazy(() => import('pages/Cast'));
 const MovieReviews = lazy(() => import('pages/Reviews'));
 
-// import PostsComments from './PostsComments';
 
-// /posts/0deqwe
-// /posts/dwa2123dwa241
 const MovieDetails = () => {
   const { movieId } = useParams();
   const location = useLocation();
+  console.log("location", location);
   const backLinkRef = useRef(location.state?.from ?? '/');
-  // postId -> '0deqwe';
-  // postId -> 'dwa2123dwa241';
+
   const [movieDetails, setMovieDetails] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -57,26 +54,7 @@ const MovieDetails = () => {
       {error !== null && <p className="error-bage">{error}</p>}
       {isLoading && <Loader />}
       {movieDetails !== null && ( <MovieInfo movieDetails={movieDetails} />)}
-            {/* // <h1>{movieDetails.title}</h1>
-            <div className="movieDetails">
-                <div>
-                    <img src={`http://image.tmdb.org/t/p/w500${movieDetails.poster_path}`} alt={movieDetails.title} className="movie-image" width='300px'/>  
-                </div>
-                  
-                <div>
-                    <h2>{movieDetails.title}</h2>
-                    <p>User Scoore: {movieDetails.vote_count} &#37;</p>
-                    <h3> Overview</h3>
-                    <p> {movieDetails.overview} </p>
-                    <h4> Genres </h4>
-                    <p className="genres"> {movieDetails.genres.map(genry => {
-                     return ( <span key={genry.id}> {genry.name}</span>)
-                    })} </p> 
-
-                </div>
-            
-            </div>
-      )} */}
+ 
       <div className="add-information">
             <h4 > Additional information</h4>
             <NavLink className="add-information-link" to="MovieCast">
