@@ -16,31 +16,18 @@ export const FindMovieRequest = (queryValue) => {
  
 }
 
+export const CastRequest = (movieId) => {
+    return axios.get(
+        `${API_URL}/movie/${movieId}/credits?language=en-US`
+      );
+ 
+}
 
-
-
-
-
-    // const [movies, setMovies] = useState(null);
-    // const [isLoading, setIsLoading] = useState(false);
-    // const [error, setError] = useState(null);
-    
-    // const fetchMovies = async () => {
-    //     try {
-    //       // setIsLoading(true);
-    //       const { data } = await axios.get(
-    //         `${API_URL}/trending/movie/day?language=en-US`
-    //       );
-    //       return (data.results);
-         
-    //     } catch (error) {
-    //       return (error.message);
-    //       console.log(error);
-    //     } finally {
-    //       return (false);
-    //     }
-    //   };
-// export default HomePageRequest;
-
+export const ReviewsRequest = (movieId) => {
+    return axios.get(
+        `${API_URL}/movie/${movieId}/reviews?language=en-US&page=1`
+      );
+ 
+}
 
 
