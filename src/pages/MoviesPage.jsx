@@ -1,13 +1,12 @@
-import axios from 'axios';
+
 import Loader from 'components/Loader/Loader';
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { API_URL } from 'components/config';
+
 import { MoviesList } from 'components/MoviesList/MoviesList';
 import { SearchForm } from 'components/SearchForm/SearchForm';
 import { FindMovieRequest } from 'components/api-services';
-// axios.defaults.headers.common["Authorization"] = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmZDZkNWMzNWQxY2Y0ZjI3MTQzMGVhNTcwYTY5NWU5YyIsInN1YiI6IjY1NGY2ZTA5ZDQ2NTM3MDBmZTM1ZGRjNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.psMl8hPRoscle1q5_VKpQUVYxDapYRduGZdJRGatNVg";
-// axios.defaults.headers.common["accept"] = "application/json";
+
 
 // rcc - react class component
 // rafce - react arrow function expression component export default
